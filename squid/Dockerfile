@@ -1,1 +1,3 @@
-FROM ubuntu/squid:5.2-22.04_beta
+FROM alpine
+RUN apk update && apk add squid
+CMD ["squid","--foreground","-f","/etc/squid.conf"]
